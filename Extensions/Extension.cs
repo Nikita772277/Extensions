@@ -18,11 +18,11 @@ namespace Extensions
                 if (word[i] == c)
                     counter++;
             }
-            if (counter>=3)
+            if (counter >= 3)
             {
                 Console.WriteLine($"Буква встречается часто");
             }
-            else if (counter<3&&counter>0)
+            else if (counter < 3 && counter > 0)
             {
                 Console.WriteLine($"Буква встречается редко");
             }
@@ -30,24 +30,24 @@ namespace Extensions
             {
                 Console.WriteLine($"Буква не встречается");
             }
-                return counter;
+            return counter;
         }
-        public static void CheckingNumber(this int number)
+        public static void CheckEvenOdd(this int number)
         {
             if (number % 2 == 0)
             {
                 Console.WriteLine($"Число чётное");
             }
-            else if(number % 2 > 0)
+            else if (number % 2 > 0)
             {
                 Console.WriteLine($"Число не чётное");
             }
         }
-        public static void CheckingNumber(this string number)
-        {            
-            Regex regex1 = new(@"^+7\d{10}$");
+        public static string CheckingNumber(this string number)
+        {
+            Regex regex1 = new(@"^\+7\d{10}$");
             Regex regex2 = new(@"^8\d{10}$");
-            var result1= regex1.IsMatch(number);
+            var result1 = regex1.IsMatch(number);
             var result2 = regex2.IsMatch(number);
             if (result1)
             {
@@ -55,12 +55,14 @@ namespace Extensions
             }
             else if (result2)
             {
+                number = "+7" + number.Remove(0, 1);
                 Console.WriteLine($"Номер валиден после преобразования");
             }
             else
             {
                 Console.WriteLine($"Номер не валиден");
-            }    
+            }
+            return number;
         }
     }
 }

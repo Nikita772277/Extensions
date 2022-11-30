@@ -6,7 +6,7 @@ void Menu()
 {
     Console.WriteLine();
     Console.WriteLine($"Проверка наличия символа в тексте");
-    Console.WriteLine($"Проверка чётное или не чётное число");
+    Console.WriteLine($"Проверка чётное или нечётное число");
     Console.WriteLine($"Проверка номера телефона");
     Console.WriteLine();
 }
