@@ -37,7 +37,7 @@ namespace Extensions
             bool checkinputnumber = false;
             foreach (var i in inputnumber)
             {
-                 checkinputnumber = char.IsDigit(i);
+                 checkinputnumber = char.IsLetter(i);
                 if (checkinputnumber)
                 {
                     break;
