@@ -56,6 +56,8 @@ namespace Extensions
             else if (result2)
             {
                 number = "+7" + number.Remove(0, 1);
+                Console.WriteLine(number);
+
                 Console.WriteLine($"Номер валиден после преобразования");
             }
             else

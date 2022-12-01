@@ -5,9 +5,9 @@ Work work = new();
 void Menu()
 {
     Console.WriteLine();
-    Console.WriteLine($"Проверка наличия символа в тексте");
-    Console.WriteLine($"Проверка чётное или нечётное число");
-    Console.WriteLine($"Проверка номера телефона");
+    Console.WriteLine($"1) Проверка наличия символа в тексте");
+    Console.WriteLine($"2) Проверка чётное или нечётное число");
+    Console.WriteLine($"3) Проверка номера телефона");
     Console.WriteLine();
 }
 void GetMenu()

@@ -10,7 +10,7 @@ namespace Extensions
     {
         public void CheckingSymbol()
         {
-            Console.WriteLine($"Введите слово");
+            Console.WriteLine($"Введите текст");
             string word = Console.ReadLine();
             if (word == "" || word == " ")
             {
@@ -26,19 +26,32 @@ namespace Extensions
             }
             else
             {
-                Console.WriteLine($"Вы ввели не букву");
+                Console.WriteLine($"Вы ввели не символ");
             }
         }
         public void EvenOdd()
         {
-            Console.WriteLine($"Введите число");
-            string number = Console.ReadLine();
-            bool check = int.TryParse(number, out var result);
+            Console.WriteLine($"Введите число (максимальное число - 2 147 483 647)");
+            string inputnumber = Console.ReadLine();
+            bool check = int.TryParse(inputnumber, out var result);
+            bool checkinputnumber = false;
+            foreach (var i in inputnumber)
+            {
+                 checkinputnumber = char.IsDigit(i);
+                if (checkinputnumber)
+                {
+                    break;
+                }
+            }
             if (check)
             {
                 result.CheckEvenOdd();
             }
-            else { Console.WriteLine($"Вы ввели не число"); }
+            else if(checkinputnumber) { Console.WriteLine($"Вы ввели не число"); }
+            else
+            {
+                Console.WriteLine($"Введено число выходящее за пределы диапозона");
+            }
         }
         public void Number()
         {
